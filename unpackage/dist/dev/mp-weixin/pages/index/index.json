@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "uni-app",
-  "usingComponents": {}
+  "navigationBarTitleText": "发现",
+  "usingComponents": {
+    "song-list": "/components/songList"
+  }
 }
