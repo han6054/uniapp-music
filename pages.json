@@ -49,10 +49,10 @@
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",//导航栏标题颜色及状态栏前景颜色，仅仅支持black/white
-		"navigationBarTitleText": "网易云",//导航栏标题文字的内容
-	    "navigationBarBackgroundColor": "#F8F8F8",//导航栏背景颜色
-		"backgroundColor": "#F8F8F8"//窗口背景色
+		"navigationBarTextStyle": "black", //导航栏标题颜色及状态栏前景颜色，仅仅支持black/white
+		"navigationBarTitleText": "网易云", //导航栏标题文字的内容
+		"navigationBarBackgroundColor": "#F8F8F8", //导航栏背景颜色
+		"backgroundColor": "#F8F8F8" //窗口背景色
 	},
 	"condition" : { //模式配置，仅开发期间生效
 		"current": 0, //当前激活的模式(list 的索引项)
@@ -65,14 +65,11 @@
 		]
 	},
 	"tabBar": {
-			    "color": "#707070",
-		        "selectedColor": "#d81e06",
-		        "borderStyle": "#fff",
-		        "backgroundColor": "#ffffff",
-		        "height": "50px",
-		        "fontSize": "10px",
-		        "iconWidth": "24px",
-		        "spacing": "3px",
+		"color": "#888", //未选中的颜色
+		"selectedColor": "#ff2419", //已选中的颜色
+		"borderStyle": "white", //边框颜色
+		"backgroundColor": "#f9f9f9", //背景颜色
+
 		"list": [{
 		            "pagePath": "pages/index/index",
 		            "iconPath": "static/image/faxian.png",

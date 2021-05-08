@@ -14,14 +14,10 @@
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
-    "color": "#707070",
-    "selectedColor": "#d81e06",
-    "borderStyle": "#fff",
-    "backgroundColor": "#ffffff",
-    "height": "50px",
-    "fontSize": "10px",
-    "iconWidth": "24px",
-    "spacing": "3px",
+    "color": "#888",
+    "selectedColor": "#ff2419",
+    "borderStyle": "white",
+    "backgroundColor": "#f9f9f9",
     "list": [
       {
         "pagePath": "pages/index/index",

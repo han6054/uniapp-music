@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "我的",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "song-list": "/components/songList"
+  }
 }
