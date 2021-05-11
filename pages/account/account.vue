@@ -121,7 +121,7 @@
 	} from '@/apis/account.js';
 	import scan from '@/components/scan/scan.vue'
 	export default {
-		components:: {
+		components: {
 			scan
 		},
 		data() {
