@@ -1,53 +1,86 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "发现",
-				  "app-plus": {
-				      "titleNView": false //*******去掉页面的导航栏
-				    }
+			{ //放在首页上
+				"path": "pages/index/index", //页面路径，uniapp根据路径加载处理vue页面进行编译处理
+				"style": {
+					"navigationBarTitleText": "发现", //状态栏标题，覆盖globalStyle中设置的标题
+					"navigationStyle": "custom", //取消默认的原生导航栏
+					"app-plus": {
+						"titleNView": false, //去掉页面的导航栏
+						"bounce": "none", //取消ios回弹，避免和下拉刷新冲突
+						"disableScroll": true, //Android小程序卡顿 
+						"softinputNavBar": "none" //不想显示软键盘上方的横条
+					}
+				}
+			}, {
+				"path": "pages/video/video",
+				"navigationStyle": "custom",
+				"style": {
+					"navigationBarTitleText": "视频",
+					"app-plus": {
+						"titleNView": false, //去掉页面的导航栏
+						"bounce": "none", //取消ios回弹，避免和下拉刷新冲突
+						"disableScroll": true //避免安卓小程序卡顿
+					}
+				}
+	
+			}, {
+				"path": "pages/mine/mine",
+				"style": {
+					"navigationBarTitleText": "我的",
+					"navigationStyle": "custom", //取消默认的原生导航栏
+					"app-plus": {
+						"titleNView": false ////去掉页面的导航栏
+					}
+				}
+			}, {
+				"path": "pages/cloud/cloud",
+				"style": {
+					"navigationBarTitleText": "云村",
+					"navigationStyle": "custom",
+					"app-plus": {
+						"titleNView": false,
+						"bounce": "none", // 取消iOS回弹,避免和下拉刷新冲突
+						"disableScroll": true // Android小程序卡顿 
+					}
+				}
+	
+			}, {
+				"path": "pages/account/account",
+				"style": {
+					"navigationBarTitleText": "账号",
+					"app-plus": {
+						"titleNView": false
+					}
+				}
 			}
-		},
-		{
-			"path": "pages/account/account",
-			"style": {
-				"navigationBarTitleText": "账号",
-				  "app-plus": {
-				      "titleNView": false //*******去掉页面的导航栏
-				    }
+		],
+		"subPackages": [{
+				"root": "pages/subpages/index",
+				"pages": [{
+					"path": "album",
+					"style": {
+						"navigationBarTitleText": "歌单",
+						"navigationStyle": "custom",
+						"app-plus": {
+							"titleNView": false
+						}
+					}
+				}]
+			},
+			{
+				"root": "pages/subpages/account",
+				"pages": [{
+					"path": "account",
+					"style": {
+						"navigationBarTitleText": "登录",
+						"app-plus": {
+							"titleNView": false
+						}
+					}
+				}]
 			}
-		},
-		{
-			"path": "pages/cloud/cloud",
-			"style": {
-				"navigationBarTitleText": "云村",
-				  "app-plus": {
-				      "titleNView": false //*******去掉页面的导航栏
-				    }
-			}
-		},
-		{
-			"path": "pages/mine/mine",
-			"style": {
-				"navigationBarTitleText": "我的",
-				  "app-plus": {
-				      "titleNView": false //*******去掉页面的导航栏
-				    }
-			}
-		},
-		{
-			"path": "pages/video/video",
-			"style": {
-				"navigationBarTitleText": "视频",
-				  "app-plus": {
-				      "titleNView": false,
-					   "bounce":"none",//取消ios回弹，避免和下拉刷新冲突
-					   "disableScroll":true //避免安卓小程序卡顿
-				    }
-			}
-		}
-	],
+		],
 	"globalStyle": {
 		"navigationBarTextStyle": "black", //导航栏标题颜色及状态栏前景颜色，仅仅支持black/white
 		"navigationBarTitleText": "网易云", //导航栏标题文字的内容

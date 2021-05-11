@@ -97,17 +97,67 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var _vuex = __webpack_require__(/*! vuex */ 108);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
+
+
 {
-  onLaunch: function onLaunch() {
+  onLaunch: function onLaunch() {var _this = this;
     console.log('App Launch');
+    uni.getStorage({
+      key: 'userInfo',
+      success: function success(res) {
+        console.log(res.data, 'uni.getStorage===============');
+        // 此处仅做演示
+        // 跟后台校验token的有效性，判定是否在登录状态。如果token失效，需重新登录。app端不强制用户登录，可以游客身份登录，可以进一步优化流程
+        uni.request({
+          url: '', // 验证token有效性的api
+          header: {
+            "Token": res.data.token },
+
+          method: "POST",
+          success: function success(response) {
+            if (response.data.code === 200) {
+              _this.storeLogin(e.data);
+            } else {// 验证无效清除用户原有缓存数据
+              _this.storeLogout();
+            }
+          } });
+
+
+        _this.storeLogin(JSON.parse(res.data));
+
+        var mockMessage = { // 模拟应用信息
+          newMsg: [0, 1, 1, 0, 0], // 红点信息
+          account: 2 // 账号信息
+        };
+
+        _this.storeMessage(mockMessage);
+      } });
+
   },
   onShow: function onShow() {
     console.log('App Show');
+    var adShowTime = 10 * 60 * 1000; // 10分钟（单位毫秒）
+    // let adShowTime = (3 * 1000)  // 3秒测试（单位毫秒）
+    var nowTime = new Date().getTime();
+    var leaveTime = this.$store.state.leaveTime;
+
+    if (nowTime - leaveTime > adShowTime && leaveTime > 10) {
+      console.log('出现广告吧');
+      uni.navigateTo({
+        url: '/pages/account/ad' });
+
+    }
   },
   onHide: function onHide() {
     console.log('App Hide');
-  } };exports.default = _default;
+    // 记录离开时间
+    this.$store.commit('storeLeaveTime');
+  },
+  methods: _objectSpread({},
+  (0, _vuex.mapMutations)(['storeLogin', 'storeLogout', 'storeMessage'])) };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 8 */

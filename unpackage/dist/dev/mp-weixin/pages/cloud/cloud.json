@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "云村",
+  "navigationStyle": "custom",
   "usingComponents": {
     "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
     "mescroll-uni": "/components/mescroll-uni/mescroll-uni"

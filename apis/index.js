@@ -54,3 +54,11 @@ export function apiGetHotList(data) {
 		authType: 'None'
 	})
 }
+// 获取歌单详情
+export function apiAlbumDetail(data) {
+	return request.request({
+		url: '/playlist/detail',
+		method: 'GET',
+		data,
+	})
+}

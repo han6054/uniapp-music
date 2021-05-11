@@ -123,10 +123,20 @@ var _icons = _interopRequireDefault(__webpack_require__(/*! ./icons.js */ 91));f
 //
 //
 //
-var _default =
 
 
 
+
+
+/**
+ * Icons 图标
+ * @description 用于展示 icons 图标
+ * @tutorial https://ext.dcloud.net.cn/plugin?id=28
+ * @property {Number} size 图标大小
+ * @property {String} type 图标图案，参考示例
+ * @property {String} color 图标颜色
+ * @event {Function} click 点击 Icon 触发事件
+ */var _default =
 {
   name: 'UniIcons',
   props: {
@@ -140,7 +150,11 @@ var _default =
 
     size: {
       type: [Number, String],
-      default: 16 } },
+      default: 16 },
+
+    customIcons: {
+      type: String,
+      default: '' } },
 
 
   data: function data() {
